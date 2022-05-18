@@ -75,4 +75,4 @@ tkplot(h,
 #Use the following command to open the interface in your web browser. 
 biblioshiny()
 #As soon as you get the app opened, it will disable the Rstudio script file and you can perform all the analysis using the application. 
-#Navigate the options. 
+#Navigate the options and refer to the [Bibliometrix package docuemnt by the creaters] (https://cran.r-project.org/web/packages/bibliometrix/bibliometrix.pdf) 
