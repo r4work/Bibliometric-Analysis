@@ -4,5 +4,5 @@
 - When we add the term 'justice', the results narrow down to 633 docuemnts.
 # Export your documents
 - Lets export these files. The WoS gives an option to export files in range of formats. I chose bibtex file format and saved the file as 'JET.bib'.
-- Lets open the Rstudio and run the scripts to analyze the same. Visit the folder "Bibliometric Script" for further analysis.
+- Lets open the Rstudio and run the scripts to analyze the same. Visit the folder "Running analysis" for further analysis.
 - For more details on document search using web of science please refer to https://webofscience.help.clarivate.com/en-us/Content/search-results.htm
