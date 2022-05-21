@@ -1,0 +1,58 @@
+---
+title: "Bibliometric Analysis"
+output: html_document
+---
+#Install the package in Rstudio using the command install.packages("bibliometrix")
+
+```{r message=FALSE, warning=FALSE}
+library(bibliometrix)
+```
+
+#Importing the file and Descriptive Analysis
+```{r message=FALSE,warning=FALSE, results='hide'}
+M<-convert2df(file="https://raw.githubusercontent.com/r4work/Bibliomteric-Analysis/main/Running%20analysis/JET.bib",dbsource="wos",
+              format = "bibtex")
+r<-biblioAnalysis(M,sep=";")
+options(width=100)
+summary(r,k=10)
+plot(x = r, k = 20, pause = FALSE)
+```
+
+#Thematic Evolution
+```{r message=FALSE, warning=FALSE, results='hide'}
+res1<-thematicEvolution(M,field="ID",years=c(2015),n=500,minFreq=2,size=0.5,n.labels=1) 
+```
+```{r message=FALSE, warning=FALSE}
+plotThematicEvolution(res1$Nodes,res1$Edges,measure="inclusion")
+```
+#Thematic Map
+```{r message=FALSE,warning=FALSE, results='hide'}
+thematicMap(M,field="ID",n=250,minfreq=2,size=0.5,n.labels=1,repel=T)
+```
+#Country Collaboration
+```{r message=FALSE,warning=FALSE, results='hide'}
+Mc <- metaTagExtraction(M, Field = "AU_CO", sep = ";")
+NetMatrix <- biblioNetwork(Mc, analysis = "collaboration", 
+                           network = "countries", sep = ";")
+# Plot the country network
+networkPlot(NetMatrix, n = 30,
+                Title = "Country Collaboration", type = "auto",
+                normalize="association",label=TRUE,
+                size=T, remove.multiple=F,remove.isolates=T,label.cex = T,
+                edgesize=0.5, halo=F, community.repulsion = 1,
+                curved=0.2, noloops=T,label.n=10,
+                labelsize=1.5)
+```
+#Keyword Occurrence
+```{r message=FALSE,warning=FALSE, results='hide'}
+Mk <- metaTagExtraction(M, Field = "ID", sep = ";")
+NetkeyMatrix <- biblioNetwork(Mk, analysis = "co-occurrences", 
+                           network = "keywords", sep = ";")
+#Plot the network
+networkPlot(NetkeyMatrix, normalize="association", 
+                weighted=T, n = 50, Title = NULL, label=T,labelsize=1.1,
+                type = "fruchterman", size=10,size.cex =T,
+            edgesize = 0.2,label.n=30,
+            label.cex=T,curved=0.2,halo=T)
+```
+
