@@ -3,6 +3,7 @@ message: "If you use manual in this repository, please cite it as below."
 authors:
 - family-names: "Singh"
   given-names: "Mudit Kumar"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
+  orcid: "https://orcid.org/https://orcid.org/
+0000-0001-9251-2502"
 title: "Bibliometric analysis using bibliometrix package"
 url: "https://github.com/r4work/Bibliometric-Analysis"
