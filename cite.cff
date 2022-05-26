@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use manual in this repository, please cite it as below."
+authors:
+- family-names: "Singh"
+  given-names: "Mudit Kumar"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "Bibliometric analysis using bibliometrix package"
+url: "https://github.com/r4work/Bibliometric-Analysis"
